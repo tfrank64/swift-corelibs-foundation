@@ -136,9 +136,9 @@ public class NSDateFormatter : NSFormatter {
         }
     }
 
-    public var dateStyle: NSDateFormatterStyle = .NoStyle { willSet { _reset() } }
+    public var dateStyle: NSDateFormatterStyle = .NoStyle { willSet { _dateFormat = nil; _reset() } }
 
-    public var timeStyle: NSDateFormatterStyle = .NoStyle { willSet { _reset() } }
+    public var timeStyle: NSDateFormatterStyle = .NoStyle { willSet { _dateFormat = nil; _reset() } }
 
     /*@NSCopying*/ public var locale: NSLocale! = .currentLocale() { willSet { _reset() } }
 
